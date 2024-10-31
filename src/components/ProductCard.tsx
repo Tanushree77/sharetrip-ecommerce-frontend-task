@@ -78,13 +78,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
 
         <button 
-          className={`absolute top-2 right-2 ${isFavorite ? 'text- bg-white' : 'text-transparent'} ${isHovered ? 'text-red-100 font-bold' : ''} hover:text-red-500 transition-colors`}
+          className={`absolute top-2 right-2 ${isFavorite ? 'text-white' : ''} ${isHovered ? 'text-white font-bold z-20' : 'hidden'} hover:text-white transition-colors`}
           onClick={() => onToggleFavorite(product.id)}
           onMouseEnter={() => setIsFavoriteHovered(true)}
           onMouseLeave={() => setIsFavoriteHovered(false)}
           aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
         >
-          <Heart className="w-6 h-6" />
+          <Heart className={`w-8 h-8 ${isFavorite ? 'fill-white text-white' : ''}`} />
           {isFavorite && isFavoriteHovered && (
             <span className="absolute right-0 top-8 bg-white text-gray-800 text-xs px-2 py-1 rounded shadow">
               Added to Favourite
