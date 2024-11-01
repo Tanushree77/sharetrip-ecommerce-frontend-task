@@ -69,7 +69,7 @@ const ProductList: React.FC = () => {
             <ShoppingCart className="w-6 h-6" />
             {Object.keys(cart).length > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
-                {Object.values(cart).reduce((a, b) => a + b, 0)}
+                {Object.values(cart).length}
               </span>
             )}
           </button>
